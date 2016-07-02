@@ -1,3 +1,0 @@
-# Linear Model
-
-This is my linear model it's nice.
