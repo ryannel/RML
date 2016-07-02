@@ -1,0 +1,7 @@
+# Living documentation
+
+Methods can be included by using:
+
+```r
+`r PrintMethod(App$Model$Linear$Util$SubsetSelection, 'Subset Selection')`
+``` 
