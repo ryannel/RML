@@ -7,6 +7,7 @@ RML$Train$TrainModel <- function(model, dataSet, column) {
                 dataSet[, columnName] <- NULL
             }
         }
+        
         return(dataSet)
     }
 
