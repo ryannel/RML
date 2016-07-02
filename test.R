@@ -6,6 +6,8 @@ dataSet <- iris
 
 model <- RML$Regression$LinearRegression()
 
+dataSet$Species
+
 trainModel <- RML$Train$TrainModel(model, dataSet, dataSet$Sepal.Length)
 
 summary(trainModel)
