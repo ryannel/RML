@@ -26,8 +26,13 @@ The result should be a rapid prototyping environment that will increase team col
 # Name Space
 The RML Names Space will be grouped by functionality so as to guide you through the process of building and tuning models as much as possible. 
 
-![Azure ML Example](images/RMLExample1.png) 
-![Azure ML Example](images/RMLExample2.png) 
+Base Name Space
+![Azure ML Example](images/RMLExample1.png)
+
+Model selection 
+![Azure ML Example](images/RMLExample2.png)
+
+Tuning model parameters 
 ![Azure ML Example](images/RMLExample3.png) 
 
 # Examples
@@ -100,7 +105,7 @@ trainModel <- RML$Train$TrainModel(model, dataSet, dataSet$Species)
     * Two-Class
         * Boosted Decision Tree
         * Decision Forest
-        * Dscision Jungle
+        * Decision Jungle
         * Logistic Regression
         * Neural Network
         * Support Vector Machine
