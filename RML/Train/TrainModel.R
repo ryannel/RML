@@ -11,16 +11,14 @@ RML$Train$TrainModel <- function(model, dataSet, column) {
     }
 
     trainLinearModel <- function(model, trainData, column) {
-        cat('training')
-        fit <- lm(column ~., data=trainData, weights = model$Weights)
+        fit <- lm(column ~., data = trainData, weights = model$Weights)
     }
 
     trainDescisionTree <- function(model, trainData, column) {
-        cat('training')
         if (is.null(model$Methd)) {
-            fit <- rpart(column ~., data=trainData, control = model$control)
+            fit <- rpart(column ~., data = trainData, control = model$control)
         } else {
-            fit <- rpart(column ~., data=trainData, control = model$control, method = model$Method)
+            fit <- rpart(column ~., data = trainData, control = model$control, method = model$Method)
         }
 
         return(fit)
