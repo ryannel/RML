@@ -1,26 +1,7 @@
-# R Project Template
+# RML
+R Machine Learning Framework
 
-A starter Data Science project in R.
+A simpler way to do machine learning in R. 
 
-# Installation
-To install the application dependencies run:
-```
-# From the application root directory
-source("./install.R")
-```
-
-# Documentation
-This application generates living documentation using rmarkdown. This content can be found in `./documentation`
-
-To regenerate the documentation run:
-```
-# From the application root directory
-source("./src/documentation.R")
-```
-
-# App Execution
-To run the application:
-```
-# From the application root directory
-source("./src/app.R")
-```
+# About
+Inspired by Microsoft's Azure Machine Learning, this is an attempt to provide a simple, clean workflow for rapid prototyping in R.  
