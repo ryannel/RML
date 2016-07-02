@@ -12,7 +12,8 @@ These steps are replicated in RML as follows:
 2. Split Data - `Coming Soon`
 3. Select Model - `model <- RML$Classification$TwoClassDescisionTree()`
 4. Train Model - `trainModel <- RML$Train$TrainModel(model, dataSet, dataSet$Species)`
-5. Evaluate Model - `summary(trainModel)` automated evaluation to come.
+5. Cross Validate Model - `Coming Soon`
+6. Evaluate Model - `summary(trainModel)` automated evaluation to come.
 
 # Why do we need a framework?
 Training models in R can be a messy business. Simple tasks like importing a dataset, splitting it into training and test sets and passing it to a model can result in many extra and often cryptic lines of code. When comparing models it's often easy to forget the different packages we used, what their syntax looked like and what stucture your data should be in. 
