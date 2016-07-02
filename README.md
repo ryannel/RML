@@ -89,6 +89,8 @@ trainModel <- RML$Train$TrainModel(model, dataSet, dataSet$Species)
 ## General
 * Method for splitting data on ratio 7/10 etc
 * Method for comparing like models
+* Data importing CSV, SQL, REST etc.
+* Data and model caching, only retrain if the input has changed.
 
 ## Training Methods
 * Auto tuning of Hyperparameters
