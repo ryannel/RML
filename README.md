@@ -52,7 +52,7 @@ trainModel <- RML$Train$TrainModel(model, dataSet, dataSet$Sepal.Length)
 ```
 
 ### Advanced
-Here it is best to use the lm syntax correctly. 
+Here it is best to use the lm syntax directly. 
 
 ## Two Class Descision Tree
 Using the rpart package.
