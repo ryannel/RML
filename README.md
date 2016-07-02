@@ -15,9 +15,7 @@ These steps are replicated in RML as follows:
 5. Evaluate Model - `summary(trainModel)` automated evaluation to come.
 
 # Why do we need a framework?
-Training models in R can be a messy business. Simple tasks like importing a dataset, splitting it into training and test sets and passing it to a model can result in many extra and often cryptic lines of code. 
-
-When comparing models it's often easy to forget the different packages we used, what their syntax looked like and what stucture your data should be in. 
+Training models in R can be a messy business. Simple tasks like importing a dataset, splitting it into training and test sets and passing it to a model can result in many extra and often cryptic lines of code. When comparing models it's often easy to forget the different packages we used, what their syntax looked like and what stucture your data should be in. 
 
 RML seeks to cut through some of this noise by providing a well defined workflow, common utility methods and grouped models with clean, uniform APIs.
 
@@ -122,4 +120,3 @@ trainModel <- RML$Train$TrainModel(model, dataSet, dataSet$Species)
     * Neural Network Regression
     * Ordinal Regression
     * Poisson Regression
-    
