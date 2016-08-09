@@ -83,7 +83,7 @@ source("./RML/rml.R", chdir = TRUE)
 dataSet <- iris
 dataSet <- RML$SampleAndSplit$SplitData(dataSet, 0.7)
 model <- RML$Classification$TwoClassDescisionTree(method='anova', minSplit='10', minBucket='5', cp=0.02)
-trainModel <- RML$Train$TrainModel(model, dataSet$Train, dataSet$Species)
+trainModel <- RML$Train$TrainModel(model, dataSet$Train, dataSet$Train$Species)
 ```
 
 ## KMeans
