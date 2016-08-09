@@ -18,6 +18,6 @@ install.packages("MASS")
 install.packages("car")
 
 # Descision Tree Model
-install.packages("tree")
+install.packages("rpart")
 install.packages("randomForest")
 install.packages("gbm")

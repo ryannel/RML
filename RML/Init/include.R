@@ -1,3 +1,6 @@
+#SampleAndSplit
+source("SampleAndSplit/SplitData.R")
+
 # Regression Models
 source("./Model/Regression/LinearRegression.R")
 

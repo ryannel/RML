@@ -9,9 +9,9 @@ Inspired by Microsoft's Azure Machine Learning, this is an attempt to provide a 
 These steps are replicated in RML as follows:
 
 1. Import Data and Select Columns - `dataSet <- iris`
-2. Split Data - `Coming Soon`
+2. Split Data - `dataSet <- RML$SampleAndSplit$SplitData(dataSet, 0.7)`
 3. Select Model - `model <- RML$Classification$TwoClassDescisionTree()`
-4. Train Model - `trainModel <- RML$Train$TrainModel(model, dataSet, dataSet$Species)`
+4. Train Model - `trainModel <- RML$Train$TrainModel(model, dataSet$Train, dataSet$Species)`
 5. Cross Validate Model - `Coming Soon`
 6. Evaluate Model - `summary(trainModel)` automated evaluation to come.
 
@@ -81,8 +81,9 @@ Custom parameters can be set and tuned explicitly.
 source("./RML/rml.R", chdir = TRUE)
 
 dataSet <- iris
+dataSet <- RML$SampleAndSplit$SplitData(dataSet, 0.7)
 model <- RML$Classification$TwoClassDescisionTree(method='anova', minSplit='10', minBucket='5', cp=0.02)
-trainModel <- RML$Train$TrainModel(model, dataSet, dataSet$Species)
+trainModel <- RML$Train$TrainModel(model, dataSet$Train, dataSet$Species)
 ```
 
 ## KMeans
@@ -108,14 +109,14 @@ Custom parameters can be set and tuned explicitly.
 source("./RML/rml.R", chdir = TRUE)
 
 dataSet <- iris[, 1:4]
+dataSet <- RML$SampleAndSplit$SplitData(dataSet, 0.7)
 model <- RML$Classification$KMeans(centroids = 3, numberOfStarts = 50, iterations = 200)
-trainModel <- RML$Train$TrainModel(model, dataSet)
+trainModel <- RML$Train$TrainModel(model, dataSet$Train)
 ```
 
 # TODO
 
 ## General
-* Method for splitting data on ratio 7/10 etc
 * Method for comparing like models
 * Data importing CSV, SQL, REST etc.
 * Data and model caching, only retrain if the input has changed.
@@ -140,8 +141,6 @@ trainModel <- RML$Train$TrainModel(model, dataSet)
         * Logistic Regression
         * Neural Network
         * Support Vector Machine
-* Clustering
-    * K-Means
 * Regression
     * Bayesian Linear Regression
     * Boosted Decision Tree Regression
