@@ -3,11 +3,9 @@ source("./RML/rml.R", chdir = TRUE)
 dataSet <- iris
 
 #model <- RML$Classification$TwoClassDescisionTree()
+#model <- RML$Regression$LinearRegression()
+model <- RML$Classification$KMeans(centroids = 3)
 
-model <- RML$Regression$LinearRegression()
-
-dataSet$Species
-
-trainModel <- RML$Train$TrainModel(model, dataSet, dataSet$Sepal.Length)
+trainModel <- RML$Train$TrainModel(model, dataSet[, 1:4])
 
 summary(trainModel)

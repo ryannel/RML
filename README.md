@@ -85,6 +85,33 @@ model <- RML$Classification$TwoClassDescisionTree(method='anova', minSplit='10',
 trainModel <- RML$Train$TrainModel(model, dataSet, dataSet$Species)
 ```
 
+## KMeans
+Using the kmeans package.
+
+### Basic
+Assumes a set of default parameters.
+* nstart = 20
+* iterations = 100
+
+```
+source("./RML/rml.R", chdir = TRUE)
+
+dataSet <- iris[, 1:4]
+model <- RML$Classification$KMeans(centroids = 3)
+trainModel <- RML$Train$TrainModel(model, dataSet)
+```
+
+### Advanced
+Custom parameters can be set and tuned explicitly. 
+
+```
+source("./RML/rml.R", chdir = TRUE)
+
+dataSet <- iris[, 1:4]
+model <- RML$Classification$KMeans(centroids = 3, numberOfStarts = 50, iterations = 200)
+trainModel <- RML$Train$TrainModel(model, dataSet)
+```
+
 # TODO
 
 ## General

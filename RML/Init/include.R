@@ -3,6 +3,7 @@ source("./Model/Regression/LinearRegression.R")
 
 # Classification
 source("./Model/Classification/TwoClassDescisionTree.R")
+source("./Model/Classification/KMeans.R")
 
 # Train
 source("./Train/TrainModel.R")
