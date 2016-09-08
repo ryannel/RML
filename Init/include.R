@@ -10,3 +10,6 @@ source("./Model/Classification/KMeans.R")
 
 # Train
 source("./Train/TrainModel.R")
+
+#ImportData
+source("./ImportData/MSSQL.R")
