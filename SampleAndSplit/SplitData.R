@@ -1,7 +1,7 @@
 RML$SampleAndSplit$SplitData <- function (dataSet, percentage) {
     library(caret)
     
-    trainIndex <- createDataPartition(dataSet, p=percentage, list=FALSE, times = 1)
+    trainIndex <- createDataPartition(dataSet[,1], p=percentage, list=FALSE, times = 1)
 
     result <- new.env()
     result$Train <- dataSet[trainIndex, ]

@@ -13,3 +13,6 @@ source("./Train/TrainModel.R")
 
 #ImportData
 source("./ImportData/MSSQL.R")
+
+# Evaluate
+source("./Evaluate/CrossValidateModel.R")
