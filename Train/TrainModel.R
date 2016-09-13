@@ -17,12 +17,10 @@ RML$Train$TrainModel <- function(model, dataSet, column = NULL) {
     }
 
     trainDescisionTree <- function(model, trainData, column) {
-        library(rpart)
-      
         if (is.null(model$Methd)) {
-            fit <- rpart(column ~., data = trainData, control = model$control)
+            fit <- rpart::rpart(column ~., data = trainData, control = model$Control)
         } else {
-            fit <- rpart(column ~., data = trainData, control = model$control, method = model$Method)
+            fit <- rpart::rpart(column ~., data = trainData, control = model$Control, method = model$Method)
         }
 
         return(fit)
