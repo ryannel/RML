@@ -4,7 +4,7 @@ RML$ImportData$MSSQL <- (function () {
         return(GetConnection(connectionString))
     }
 
-    Connect <- function(server, databaseName) {
+    ConnectMsAuth <- function(server, databaseName) {
         connectionString <- paste('driver={SQL Server};server=', server, ';database=', databaseName, ';trusted_connection=true', sep='')
         return(GetConnection(connectionString))
     }
@@ -12,9 +12,9 @@ RML$ImportData$MSSQL <- (function () {
     GetConnection <- function(connectionString) {
         library(RODBC)
         connection <- odbcDriverConnect(connectionString)
-
         result <- new.env()
         result$Execute <- Query(connection)
+        result$ExecuteFile <-QueryFile(connection)
         result$Close <- Close(connection)
         return(result)
     }
@@ -25,14 +25,23 @@ RML$ImportData$MSSQL <- (function () {
             return(result)
         })
     }
+    
+    QueryFile <- function (connection) {
+        return (function (file) {
+            query <- readChar(file, file.info(file)$size)
+            result <- sqlQuery(connection, query)
+            return(result)
+        })
+    }
 
     Close <- function (connection) {
         return (function () {
             odbcClose(connection)
         })
     }
-
+    
     MSSQL <- new.env()
     MSSQL$Connect <- Connect
+    MSSQL$ConnectMsAuth <- ConnectMsAuth
     return(MSSQL)
 })()
